@@ -5,6 +5,7 @@
 // 1- Reem Abdulaziz Altamimi (1906580) - Leader
 // 2- Nojood Othman Alghamdi (1906145)
 // 3- Morouj Mohammed Hamdhy (1911029)
+
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
@@ -41,7 +42,8 @@ public class Graph {
     }
 
     /**
-     *
+     * // this method generate a random undirected graph
+     * 
      * @param graph
      * @return
      */
@@ -127,7 +129,7 @@ public class Graph {
     // -------------------------------------------------------------------------
     /**
      * Kruskal's Algorithm
-     *
+     * 
      */
     public void kruskal() {
 
@@ -135,7 +137,7 @@ public class Graph {
         // modified data type from ArrayList to LinkedList
         LinkedList<Edge>[] allEdges = adjList.clone();
 
-        // create src priority queue, ordered using comparator
+        // create the priority queue, ordered using comparator
         PriorityQueue<Edge> pq = new PriorityQueue<>(ne, Comparator.comparingInt(o -> o.weight));
 
         //add all the edges to priority queue, and sort the edges on weights
@@ -145,10 +147,10 @@ public class Graph {
             }
         }
 
-        // create src source []
+        // create the source []
         int[] source = new int[nv];
 
-        // creating src new element with src source pointer to itself.
+        // creating the new element with the source pointer to itself.
         for (int i = 0; i < nv; i++) {
             source[i] = i;
         }
@@ -198,7 +200,8 @@ public class Graph {
     }
 
     /**
-     *
+     * make parent vertex as source of destination
+     * 
      * @param parent
      * @param src
      * @param des
@@ -207,7 +210,7 @@ public class Graph {
         int src_source = findCycle(parent, src);
         int des_source = findCycle(parent, des);
 
-        // make src as source of des
+        
         parent[des_source] = src_source;
     }
 
@@ -391,14 +394,15 @@ public class Graph {
     }
 
     /**
-     *
+     * update the value of edge key
+     * 
      * @param minHeap
      * @param newKey
      * @param vertex
      */
     public void decreaseKey(MinHeap minHeap, int newKey, int vertex) {
 
-        //get the edges which key's needs src decrease;
+        //get the edges which key's needs the decrease;
         int index = minHeap.indexes[vertex];
 
         //get the node and update its value
@@ -408,7 +412,9 @@ public class Graph {
     }
 
     /**
-     *
+     * 
+     * sum weights and print the total cost
+     * 
      * @param resultSet
      * @return
      */

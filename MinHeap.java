@@ -26,18 +26,10 @@ public class MinHeap {
         currentSize = 0;
     }
 
-    /**
-     *  
-     */
-    public void display() {
-        for (int i = 0; i <= currentSize; i++) {
-            System.out.println(" " + mH[i].vertex + "   key   " + mH[i].key);
-        }
-        System.out.println("________________________");
-    }
 
     /**
-     *
+     * insert to min heap
+     * 
      * @param x
      */
     public void insert(HeapNode x) {
@@ -86,7 +78,8 @@ public class MinHeap {
     }
 
     /**
-     *
+     * 
+     * 
      * @param key
      */
     public void sinkDown(int key) {
@@ -113,6 +106,7 @@ public class MinHeap {
     }
 
     /**
+     * swap the positions
      *
      * @param a
      * @param b
@@ -124,7 +118,8 @@ public class MinHeap {
     }
 
     /**
-     *
+     * check if heap is empty
+     * 
      * @return
      */
     public boolean isEmpty() {
@@ -132,7 +127,8 @@ public class MinHeap {
     }
 
     /**
-     *
+     * return heap size
+     * 
      * @return
      */
     public int heapSize() {
